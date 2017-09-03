@@ -21,30 +21,34 @@ Questions.prototype.checkAnswer = function (){
     }
 } 
 
-var    q1 = new Questions('How far is the Sun away from Earth?',
+var    question1 = new Questions('How far is the Sun away from Earth?',
                       [' - 152_million_km', 
                        ' - 124_million_km', 
                        ' - 170_million_km'], 
                       0);
 
-var    q2 = new Questions('What is the answer to Life the Univers and Everything?',
+var    question2 = new Questions('What is the answer to Life the Univers and Everything?',
                          ['- I don\'t know!', 
                           '- 42',
                           '- One day we all gonna die'],
-                         1);
+                         0,1,2);
 
-var    q3 = new Questions('What is the name of US President?',
+var    question3 = new Questions('What is the name of US President?',
                           ['- Vladimir Putin', 
                            '- Donald Trump', 
                            '- Jacques Chirac'], 
                           1);
 
-var questions = [q1, q2, q3];
+var     question4 = new Questions('What is hard water ?',
+                                  ['- ICE', 'CocaCola', 'High Mineral Content'], 2);
+
+var questions = [question1, question2, question3];
+
 var randomQ = Math.floor(Math.random() * questions.length);
 
 questions[randomQ].displayQuestions();
 
-var answer = parseInt(prompt('Please select the correct answer.'));
+var answer = parseInt(prompt('Select the correct answer.'));
 
 questions[randomQ].checkAnswer(answer);
 
